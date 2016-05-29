@@ -1,0 +1,190 @@
+		<!-- Start right content -->
+        <div class="content-page">
+			<!-- ============================================================== -->
+			<!-- Start Content here -->
+			<!-- ============================================================== -->
+            <div class="content">
+            					<!-- Page Heading Start -->
+				<div class="page-heading">
+            		</div>
+            	<!-- Page Heading End--> 	
+            	<div class="row">
+            		<div class="col-md-4">
+            		<div class="widget lightblue-1">
+							<div class="widget-content padding">
+								<div class="widget-icon">
+
+								</div>
+								<div class="text-box">
+									<p class="maindata">By <b>Experience</b></p>
+									<h2><span > 
+											<select class="form-control" id="expFilter" onchange="readJobsBasedOnFilter('maxE', this.value )">
+												<option value="1">0-1 years</option>
+												<option value="2">2 years</option>
+												<option value="3">3 years</option>
+												<option value="4">4 years</option>
+												<option value="5">5 years</option>
+												<option value="6">6 years</option>
+												<option value="7">7 years</option>
+												<option value="8">8 years</option>
+												<option value="9">9 years</option>
+
+											</select>
+
+									</span></h2>
+
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							
+					</div>
+					</div>
+					<div class="col-md-4">
+            		<div class="widget green-1">
+							<div class="widget-content padding">
+								<div class="widget-icon">
+
+								</div>
+								<div class="text-box">
+									<p class="maindata">By <b>Location</b></p>
+									<h2>
+										<span>
+											<select class="form-control" id="locationFilter" onchange="readJobsBasedOnFilter('location', this.value )">
+												<option value="Bengaluru">Bengaluru</option>
+												<option value="Delhi">Delhi</option>
+												<option value="Chandigarh">Chandigarh</option>
+												<option value="Pune">Pune</option>
+												<option value="Mumbai">Mumbai</option>
+												<option value="Kolkata">Chennai</option>
+												<option value="Gurgaon">Gurgaon</option>
+												<option value="hyderabad">Hyderabad</option>
+											</select>
+										</span>
+									</h2>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							
+					</div>
+					</div>
+					<div class="col-md-4">
+            		<div class="widget orange-4">
+							<div class="widget-content padding">
+								<div class="widget-icon">
+
+								</div>
+								<div class="text-box">
+									<p class="maindata">By <b>Skill</b></p>
+									<h2>
+										<span>
+											<select class="form-control" id="skillFilter" onchange="readJobsBasedOnFilter('skills', this.value )">
+												<option value="php">PHP</option>
+												<option value="python">Python</option>
+												<option value="java">Java</option>
+												<option value="android">Android</option>
+												<option value="html">HTML</option>
+												<option value="javascript">Javascript</option>
+												<option value="wordpress">Wordpress</option>
+												<option value="mobile application">Mobile Application</option>
+											</select>
+										</span>
+									</h2>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							
+					</div>
+					</div>
+            		
+
+            	</div>			
+          	
+				<div class="row">
+					<div class="col-md-12 portlets">
+						<div class="widget">
+							<div class="widget-header">
+								<h2>Add food</h2>
+								<div class="additional-btn">
+									<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
+									<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
+									<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+								</div>
+							</div>
+							<div class="widget-content padding">
+								<div class="input-group">
+								  <span class="input-group-addon"><i class=" icon-archive"></i></span>
+								  <input type="text" class="form-control itm" placeholder="Food Item Name" id="item_name">
+								
+								</div>
+								<br>
+								<div class="input-group">
+								  <span class="input-group-addon">&nbsp;<i class="fa fa-rupee"></i> &nbsp; </span>
+								  <input type="number" class="form-control itm" placeholder="Amount" id="item_amount">
+								
+								</div><br>
+								<div class="input-group">
+								  <span class="input-group-addon">&nbsp;<i class="glyphicon glyphicon-chevron-down"></i> &nbsp; </span>
+								  <select class="form-control itm" id="item_category">
+								 	<option value="ch#">Choose Category</option>
+								  	<option value="veg">Vegetarian</option>
+								  	<option value="non-veg">Non-Veg</option>
+								  </select>
+								
+								</div><br>
+								<div class="input-group">
+								  <span class="input-group-addon">&nbsp;<i class="glyphicon glyphicon-picture"></i> &nbsp; </span>
+								  <input type="text" class="form-control itm" placeholder="Image Url" id="item_image">
+								
+								</div>
+								
+								<br><br>
+								<button class="btn btn-primary" id="item_add" onclick='submitFoodItem()'> Add Item</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+							
+					</div>
+				</div>
+
+				            <!-- Footer Start -->
+            <footer>
+                GrepJobs &copy; 2014
+                <div class="footer-links pull-right">
+                	<a href="#">About</a><a href="#">Support</a><a href="#">Terms of Service</a><a href="#">Legal</a><a href="#">Help</a><a href="#">Contact Us</a>
+                </div>
+            </footer>
+            <!-- Footer End -->			
+            </div>
+			<!-- ============================================================== -->
+			<!-- End content here -->
+			<!-- ============================================================== -->
+
+        </div>
+        <script type="text/javascript">
+        	function submitFoodItem() {
+        		var flag=1;
+        		$('.itm').each(function() {
+        			
+        			if( $(this).val().length < 0 || $(this).val() == 'ch#'  ){
+        				flag=0;
+        				return 0;
+        			}
+
+        		});
+        		if(flag){
+        			var data = { "name" : $('#item_name').val() , "price" : $('#item_amount').val() , "category" : $('#item_category').val() , "image" : $('#item_image').val()  };
+        				$.post('/item/add',data).done(function(data) {
+        						if(data.status==200){
+
+        						}
+        				console.log(data);
+        				});
+
+        		}else{
+        			alert("Please fix validation");
+        		}
+        	}
+        </script>
