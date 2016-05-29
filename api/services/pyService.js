@@ -70,9 +70,9 @@ exports.transactions = function(opts,cb) {
 
             request(options, function (error, response, body) {
               if(response.statusCode == 200 ){
-                cb(error,JSON.parse(body));
+                cb(null, body);
               }else{
-                cb(error,body);
+                cb(error);
               }
             });
 
