@@ -95,6 +95,15 @@ module.exports = {
 
 		});
 		require("fs").createReadStream("assets/templates/employe_sheet.csv").pipe(converter);
+	},
+	items : function(req, res) {
+		pyService.items(function(err, data) {
+			if(err){
+				return res.negotiate(err);
+			}else{
+				return res.json(data);
+			}
+		});
 	}
 
 };

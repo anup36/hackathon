@@ -39,5 +39,20 @@ exports.invoke = function (options, cb) {
     // Set up the request
     var req = request(req_options, callback);
     // console.log("req", req);
+},
+exports.items = function(cb) {
+
+    var options = { method: 'GET',
+        url: 'http://localhost:8080/items'
+    };
+
+request(options, function (error, response, body) {
+  if(response.statusCode == 200) {
+    cb(error, JSON.parse(body));
+  }else{
+    cb(error)
+  }
+});
+
 }
 
