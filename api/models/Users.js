@@ -42,6 +42,7 @@ module.exports = {
         		}else{
         			// sails.log.debug("location", user);
         		var userId = (user.userDetails) ? user.userDetails.hits.hits[0]._id : user._id;
+                var user = _.pluck(user.userDetails.hits.hits, "_source");
                 var dataObj =  _.pick(data, 'online', 'email', 'punchIn_pass');
                 sails.log.debug("status", dataObj);
         		ES.update(dataObj, {id: userId}, function(err, result){
@@ -50,6 +51,8 @@ module.exports = {
         				cb(err);
         			}else{
         				sails.log.debug("User updated", dataObj.online);
+                        result.user = user;
+                        sails.log.debug("result", result);
                         cb(null, result);
                         var query = {
                                    "query" : {

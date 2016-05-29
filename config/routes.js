@@ -35,7 +35,7 @@ module.exports.routes = {
   'POST /user/add'       :  'UsersController.signup',
   'GET  /user/list'      :  'UsersController.list',
   'POST /user/login'     :  'UsersController.login',
-  'PUT  /user/compute'      :  'UsersController.compute',
+  'PUT  /user/compute'   :  'UsersController.compute',
   'PUT  /user/update'    :  'UsersController.edit',
   'GET /items'           :  'UsersController.items',
   'POST /transactions'   :  'UsersController.transactions',
