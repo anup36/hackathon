@@ -77,8 +77,7 @@ module.exports = {
                                 var user = _.pluck(user.hits.hits, "_source");
                                 user = user[0];
                                 var data = {
-                                    // status: (dataObj.online) ? 'in' : 'out',
-                                    status: 'in',
+                                    status: (dataObj.online) ? 'in' : 'out',
                                     email: user.email,
                                     password: user.password
                                  };
