@@ -145,26 +145,26 @@ module.exports = {
 };
 
 checkUserStatusAndPunchINOUT = function(data){
-    var options = {
-        url: 'http://192.168.0.143:8080/' +'autopunch',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body:{
-            status : data.status,
-            email : data.email, 
-            password  : data.password
-        },
-        json: true
-    };
-    // sails.log.debug("options", options);
-    pyService.invoke(options, function(err, result){
-        if(err){
-            sails.log.error(err);
-        }else{
-            sails.log.debug(null, result);
-        }
-    });
+//     var options = {
+//         url: 'http://localhost:8080/' +'autopunch',
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body:{
+//             status : data.status,
+//             email : data.email, 
+//             password  : data.password
+//         },
+//         json: true
+//     };
+//     // sails.log.debug("options", options);
+//     pyService.invoke(options, function(err, result){
+//         if(err){
+//             sails.log.error(err);
+//         }else{
+//             sails.log.debug(null, result);
+//         }
+//     });
 };
 
