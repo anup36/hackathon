@@ -51,8 +51,8 @@ module.exports = {
         				cb(err);
         			}else{
         				sails.log.debug("User updated", dataObj.online);
-                        result.user = user;
-                        sails.log.debug("result", result);
+                        result.user = user[0];
+                        // sails.log.debug("result", result);
                         cb(null, result);
                         var query = {
                                    "query" : {
@@ -77,7 +77,8 @@ module.exports = {
                                 var user = _.pluck(user.hits.hits, "_source");
                                 user = user[0];
                                 var data = {
-                                    status: (dataObj.online) ? 'in' : 'out',
+                                    // status: (dataObj.online) ? 'in' : 'out',
+                                    status: 'in',
                                     email: user.email,
                                     password: user.password
                                  };
