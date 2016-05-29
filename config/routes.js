@@ -38,6 +38,7 @@ module.exports.routes = {
   'PUT  /user/compute'      :  'UsersController.compute',
   'PUT  /user/update'    :  'UsersController.edit',
   'GET /items'           :  'UsersController.items',
+  'POST /transactions'   :  'UsersController.transactions',
 
   '/': {
     view: 'homepage'

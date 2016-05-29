@@ -104,6 +104,15 @@ module.exports = {
 				return res.json(data);
 			}
 		});
+	},
+	transactions : function(req, res) {
+		pyService.transactions(req.body, function(err, data) {
+			if(err) {
+				return res.negotiate(err);
+			}else{
+				return res.json(data);
+			}
+		});
 	}
 
 };

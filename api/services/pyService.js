@@ -54,5 +54,27 @@ request(options, function (error, response, body) {
   }
 });
 
+},
+exports.transactions = function(opts,cb) {
+
+            var options = { 
+              method: 'POST',
+              url: 'http://localhost:8080/transactions',
+              headers: 
+               { 
+                'content-type': 'application/json' 
+               },
+                body: opts,
+                json: true 
+            };
+
+            request(options, function (error, response, body) {
+              if(response.statusCode == 200 ){
+                cb(error,JSON.parse(body));
+              }else{
+                cb(error,body);
+              }
+            });
+
 }
 
